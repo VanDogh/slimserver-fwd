@@ -66,16 +66,6 @@ forward_bcast(int sock_fd, unsigned char *buf, int len)
     dest.sin_port = htons(3483); // Server Port for SlimServer
 
     forward_response(sock_fd, buf, len, &dest, NULL);
-    /*
-    int nbytes = sendto(sock_fd, buf, len, 0, (struct sockaddr *) &dest, sizeof(dest));
-    if (nbytes < 0) {
-	perror("Send error");
-    } else if (nbytes < len) {
-	printf("Only %d bytes forwarded\n", nbytes);
-    } else {
-	printf("Forwarded %d bytes\n", nbytes);
-    }
-    */
 }
 
 int
@@ -120,11 +110,11 @@ main(int argc, char *argv[])
 
     while (1) {
 	struct sockaddr_in si_caller;
-	unsigned slen = sizeof(struct sockaddr_in);
 	unsigned char buf [8192];
 	memset(buf, 0, sizeof(buf));
 
 	/*
+	unsigned slen = sizeof(struct sockaddr_in);
 	int nbytes = recvfrom(sock_fd, buf, sizeof(buf), 0,
 			      (struct sockaddr *) &si_caller, &slen);
 	*/
