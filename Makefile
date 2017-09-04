@@ -1,5 +1,5 @@
 
-CFLAGS := -O1 -std=c99 -Wall -Werror
+CFLAGS := -O1 -std=gnu99 -Wall -Werror
 
 slimserver-fwd: slimserver-fwd.c
 	$(CC) $(CFLAGS) -o $@ $^
