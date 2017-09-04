@@ -1,5 +1,5 @@
 
-#define __APPLE_USE_RFC_3542
+#define __APPLE_USE_RFC_3542  // For MacOSX, maybe not required
 
 #include <sys/types.h>
 #include <sys/socket.h>

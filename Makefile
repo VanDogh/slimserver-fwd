@@ -1,7 +1,8 @@
 
+CFLAGS := -O1 -std=c99 -Wall -Werror
 
 slimserver-fwd: slimserver-fwd.c
-	$(CC) -Wall -Werror -o $@ -O1 $^
+	$(CC) $(CFLAGS) -o $@ $^
 
 clean:
-	rm slimserver-fwd
+	-rm -f slimserver-fwd
